@@ -23,6 +23,7 @@ jobs:
         run: yarn
   
   test:
+    runs-on: ubuntu-latest
     needs: dependencies
     steps:
       - name: Lint Javascript
@@ -33,6 +34,7 @@ jobs:
         run: yarn test
 
   build:
+    runs-on: ubuntu-latest
     needs: test
     steps:
       - name: Build assets
@@ -43,6 +45,8 @@ jobs:
           path: dist/ # or path/to/artifact
     
   deploy_preview:
+    runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
