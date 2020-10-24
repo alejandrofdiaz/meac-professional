@@ -16,7 +16,8 @@
   },
   "volta": {
     "node": "14.14.0",
-    "yarn": "1.22.10"
+    "yarn": "1.22.10",
+    "firebase-tools": "8.13.1"
   },
   "dependencies": {
     "react": "^17.0.1",
