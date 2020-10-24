@@ -4,11 +4,46 @@
 name: Deploy to Firebase Hosting on PR
 'on': pull_request
 jobs:
-  build_and_preview:
+  dependencies:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: yarn && yarn build
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+        node-version: 14.14.0
+      - name: Yarn install
+        run: yarn
+  
+  test:
+    needs: dependencies
+    steps:
+      - name: Lint Javascript
+        run: yarn lint
+      - name: Typecheck
+        run: yarn typecheck
+      - name: Unit testing
+        run: yarn test
+
+  build:
+    needs: test
+    steps:
+      - name: Build assets
+        run: yarn build:dev
+      - uses: actions/upload-artifact@v2
+        with:
+          name: bundle-artifacts
+          path: dist/ # or path/to/artifact
+    
+  deploy_preview:
+    steps:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

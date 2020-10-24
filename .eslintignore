@@ -1,4 +1,8 @@
 /node_modules
 package.json
+/dist
+/artifacts
+/public
+/temp
 
 *.d.ts
