@@ -1,0 +1,13 @@
+{
+  "name": "elinor-almenara",
+  "version": "1.0.0",
+  "description": "Personal Website for Elinor Almenara",
+  "main": "index.js",
+  "author": "Alejandro Frías",
+  "license": "MIT",
+  "private": false,
+  "volta": {
+    "node": "14.14.0",
+    "yarn": "1.22.10"
+  }
+}
