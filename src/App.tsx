@@ -1,3 +1,10 @@
 import * as React from 'react';
 
-export const App = () => <div className="test">Hello World</div>;
+import { Analytics } from './tracking/Analitics';
+
+export const App = () => (
+  <>
+    <div className="test">Hello World</div>
+    <Analytics />
+  </>
+);
