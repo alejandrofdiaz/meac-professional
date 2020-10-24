@@ -16,4 +16,12 @@ module.exports = {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
   },
+  overrides: [
+    {
+      files: ['src/index.tsx'],
+      rules: {
+        'import/no-default-export': 'off',
+      },
+    },
+  ],
 };

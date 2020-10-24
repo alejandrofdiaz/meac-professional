@@ -9,20 +9,40 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "start": "react-static start",
+    "build": "react-static build",
+    "build:dev": "react-static build --staging"
   },
   "volta": {
     "node": "14.14.0",
     "yarn": "1.22.10"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.12.11",
+    "react-static": "^7.4.2"
+  },
   "devDependencies": {
     "@afrias/eslint-config": "^0.5.16",
+    "@reach/router": "^1.3.4",
     "@types/jest": "^26.0.15",
+    "@types/node": "^12.7.2",
+    "@types/reach__router": "^1.2",
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-hot-loader": "^4.1.0",
+    "@types/webpack-env": "^1.14.0",
     "eslint": "^7.12.0",
     "jest": "^26.6.1",
     "jest-environment-jsdom-global": "^2.0.4",
     "prettier": "^2.1.2",
+    "react-static-plugin-reach-router": "^7.4.2",
+    "react-static-plugin-sass": "^7.3.0",
+    "react-static-plugin-sitemap": "^7.2.0",
+    "react-static-plugin-source-filesystem": "^7.4.2",
+    "react-static-plugin-typescript": "^7.4.2",
     "ts-jest": "^26.4.2",
     "typescript": "^4.0.3"
   }

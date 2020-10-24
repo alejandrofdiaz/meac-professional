@@ -46,3 +46,7 @@ deploy_key
 
 # rollup-plugin-typescript2
 .rpt2_cache
+
+artifacts
+tmp
+dist
