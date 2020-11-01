@@ -1,0 +1,5 @@
+.only-desktop {
+  @media only screen and (max-width: $md) {
+    display: none;
+  }
+}

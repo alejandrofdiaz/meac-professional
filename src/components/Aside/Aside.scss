@@ -1,0 +1,7 @@
+.aside {
+  background: red;
+
+  @media only screen and (min-width: $md) {
+    width: $aside-width;
+  }
+}
