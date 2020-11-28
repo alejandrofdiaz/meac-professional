@@ -1,7 +1,20 @@
-.aside {
-  background: red;
+$aside-padding: 2em 4em;
 
-  @media only screen and (min-width: $md) {
-    width: $aside-width;
-  }
+.aside {
+  // background: red;
+  padding: $aside-padding;
+  text-align: center;
+
+  // background-image: url('/alex-perez-NLUkAA-nDdE-unsplash.jpg');
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f2f2f2;
+
+  // @media only screen and (min-width: $md) {
+  //   width: $aside-width;
+  // }
 }

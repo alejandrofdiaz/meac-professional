@@ -4,6 +4,9 @@ module.exports = {
     project: './tsconfig.eslint.json',
     tsconfigRootDir: './',
   },
+  globals: {
+    JSX: true,
+  },
   settings: {
     'import/resolver': {
       node: {

@@ -1,5 +1,7 @@
+@import 'styles/normalize';
 @import 'styles/variables';
 @import 'styles/utilities';
+@import 'styles/utilities.spacing';
 
 @import 'components/Typography/Typography.scss';
 
@@ -7,6 +9,8 @@
 @import 'components/Aside/Aside.scss';
 @import 'components/Footer/Footer.scss';
 @import 'components/Main/Main.scss';
+@import 'components/ProfilePic/ProfilePic.scss';
+@import 'components/IconGroup/IconGroup.scss';
 
 .test {
   color: blue;

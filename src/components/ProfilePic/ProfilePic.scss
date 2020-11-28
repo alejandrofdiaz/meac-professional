@@ -1,0 +1,7 @@
+$profilePic-width: 5em;
+
+.profilePic {
+  border-radius: 50%;
+  width: $profilePic-width;
+  height: $profilePic-width;
+}

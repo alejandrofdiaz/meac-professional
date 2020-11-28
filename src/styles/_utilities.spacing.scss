@@ -1,0 +1,77 @@
+$spacing-properties-by-prefix: (
+  p: padding,
+  px: (
+    padding-right,
+    padding-left,
+  ),
+  py: (
+    padding-top,
+    padding-bottom,
+  ),
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left,
+  m: margin,
+  mx: (
+    margin-right,
+    margin-left,
+  ),
+  my: (
+    margin-top,
+    margin-bottom,
+  ),
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+);
+
+$spacing-scale: 0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8;
+$spacing: 8px;
+
+@function rem($size) {
+  // Only accept px values
+  @if (unit($size) != 'px') {
+    @error "The '#{$size}' value can\'t be converted to rem units. The `rem` function only converts px to rem.";
+  }
+
+  @return #{$size / $base-font-size}rem;
+}
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}
+
+@function to-string($value) {
+  @return inspect($value);
+}
+
+@function spacing($scale) {
+  // Only accept round numbers
+  @if (round($scale) != $scale and $scale != 0.5) {
+    @error "The '#{$scale}' value can\'t be used as a spacing scale. The `spacing` function only accepts integers or `0.5`.";
+  }
+  @return rem($spacing * $scale);
+}
+
+@each $prefix, $properties in $spacing-properties-by-prefix {
+  @each $space in $spacing-scale {
+    .#{$prefix}-#{str-replace(to-string($space), '.')} {
+      @each $property in $properties {
+        #{$property}: spacing($space) !important;
+      }
+    }
+  }
+}
