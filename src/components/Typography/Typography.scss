@@ -17,3 +17,16 @@ ul {
 li {
   list-style: none;
 }
+
+b {
+  color: $color-secondary;
+}
+
+p {
+  line-height: 1.75;
+  margin: 0;
+}
+
+.body {
+  margin-top: spacing(2);
+}

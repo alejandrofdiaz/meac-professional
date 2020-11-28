@@ -6,7 +6,7 @@ import { Icon } from 'components/Icon';
 import { IconGroup } from 'components/IconGroup';
 import { Main } from 'components/Main';
 import { ProfilePic } from 'components/ProfilePic';
-import { Body, Bold } from 'components/Typography';
+import { Body, Bold, SectionTitle, Title } from 'components/Typography';
 import { Meta } from 'Meta';
 import * as React from 'react';
 
@@ -54,8 +54,23 @@ export const App = () => (
           </IconGroup.ListItem>
         </IconGroup>
       </Aside>
-      <Main>
-        Some main content
+      <Main className="p-2">
+        <SectionTitle>Sobre mí</SectionTitle>
+        <Body>
+          Mi mirada y mi forma de entender la psicología está basada en la
+          terapia breve centrada en soluciones y la
+          <Bold> Terapia Narrativa</Bold>, ambas parten de la
+          <Bold> terapia sistémica</Bold>. Las cuales me permiten entender y
+          guiar a las personas desde una visión integral y respetuosa, donde
+          cada una de ellas es co-autora de su proceso de cambio.
+        </Body>
+        <Body>
+          Desde mi último año de Psicología en la Universidad de la Laguna allá
+          por 2011, el uso de recursos lúdicos, las técnicas externalizadoras,
+          la resiliencia, las cartas terapéuticas y la indagación apreciativa
+          son los faros que guían mis intervenciones
+        </Body>
+
         <Footer>Some Footer</Footer>
       </Main>
     </Container>
